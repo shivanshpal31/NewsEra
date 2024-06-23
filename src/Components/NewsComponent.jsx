@@ -60,7 +60,7 @@ export class NewsComponent extends Component {
   fetchMoreData = async () => {
     const nextPage = this.state.page+1
     // this.setState({ page: this.state.page + 1 });
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${nextPage}&pageSize=${this.props.pageSize}`;
+    const url = `${process.env.REACT_APP_NEWS_API_URL}?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${nextPage}&pageSize=${this.props.pageSize}`;
     // this.setState({ loading: true });
     this.setState({page:nextPage})
     console.log(this.page)
